@@ -1,9 +1,6 @@
 
 require 'spec_helper.rb'
 
-Capybara.default_driver = :selenium
-Capybara.app_host = "http://www.youtube.com"
-
 describe "Searching for a video" do
   it "allows searches for general terms" do
     visit ""

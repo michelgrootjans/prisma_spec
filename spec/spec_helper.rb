@@ -4,7 +4,9 @@ require 'capybara/dsl'
 require 'test_helper'
 
 Capybara.default_driver = :selenium
-Capybara.app_host = "http://www.youtube.com"
+#Capybara.app_host = "http://www.youtube.com"
+Capybara.app_host = "http://localhost:9319"
+
 
 RSpec.configure do |config|
   config.include Capybara::DSL

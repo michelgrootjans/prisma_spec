@@ -1,25 +1,11 @@
-require 'rspec'
-require 'capybara'
-require 'capybara/dsl'
 require 'spec_helper.rb'
 
-Capybara.default_driver = :selenium
-Capybara.app_host = "http://www.youtube.com"
-
-describe "Searching for a video" do
+describe "Verrichting zoeken" do
   it "allows searches for general terms" do
-    visit ""
-    fill_in('search_query', :with => "text adventures")
-    click_button('search-btn')
-    page.should have_content("GET LAMP: The Text Adventure Documentary")
+    visit "/v2/zoeken"
+    fill_in 'query', with: "arkenvest"
+    click_on 'Zoek'
+    page.should have_text "2008/0936/02"
+    page.should have_text "Arkenvest - 22 huurw"
   end
 end
-
-#describe "Searching for a video" do
-#  it "allows searches for general terms" do
-#    visit "/v2/zoeken"
-#    fill_in 'query', with: "arkenvest"
-#    click 'zoeken')
-#    page.should have_content "2008/0936/02"
-#  end
-#end

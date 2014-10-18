@@ -1,7 +1,7 @@
 require 'spec_helper.rb'
 
 describe "Verrichting zoeken" do
-  it "allows searches for general terms" do
+  it "zoek een verrichting" do
     visit "/v2/zoeken"
     fill_in 'query', with: "arkenvest"
     click_on 'Zoek'

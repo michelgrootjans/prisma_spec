@@ -4,7 +4,7 @@ require 'capybara/dsl'
 require 'test_helper'
 
 Capybara.default_driver = :selenium
-Capybara.app_host = "http://localhost:9319"
+Capybara.app_host = "http://portaal-test.woonnet.be/"
 
 
 RSpec.configure do |config|

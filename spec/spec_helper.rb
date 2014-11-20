@@ -2,6 +2,7 @@ require 'rspec'
 require 'capybara'
 require 'capybara/dsl'
 require 'test_helper'
+require 'faker'
 
 Capybara.run_server = false
 Capybara.default_driver = :selenium

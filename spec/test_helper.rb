@@ -1,18 +1,18 @@
 module TestHelper
   def log_in_as_shm
-    return if is_logged_in_with? "stefan.alaerts@vmsw.be"
-    visit "Account/Login"
-    fill_in 'Gebruikersnaam', with: "stefan.alaerts@vmsw.be"
-    fill_in 'Wachtwoord', with: "aaaaaa"
-
-    click_on 'Log in'
+    log_in_as "stefan.alaerts@vmsw.be", "aaaaaa"
   end
 
   def log_in_as_gemeente
-    return if is_logged_in_with? "michel.grootjans@gmail.com"
+    log_in_as "michel.grootjans@gmail.com", "p7NtvG05"
+  end
+
+  def log_in_as username, password
+    return if is_logged_in_with? username
+    visit "Account/Logoff"
     visit "Account/Login"
-    fill_in 'Gebruikersnaam', with: "michel.grootjans@gmail.com"
-    fill_in 'Wachtwoord', with: "p7NtvG05"
+    fill_in 'Gebruikersnaam', with: username
+    fill_in 'Wachtwoord', with: password
 
     click_on 'Log in'
   end

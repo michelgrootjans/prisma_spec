@@ -1,8 +1,4 @@
 shared_examples_for "een aangemelde verrichting" do
-    it 'toont status' do
-        page.should have_content "Fase Ingediend"
-    end
-
     it "kan worden gepubliceerd" do
         click_on 'Publiceren'
         page.should_not have_content 'Publiceren'
@@ -21,6 +17,7 @@ shared_examples_for "een aangemelde verrichting" do
 
     it "toont de huidige OI als partij" do
         page.should have_content 'Initiatiefnemer Woonhaven Antwerpen (woonhaven.antwerpen@woonhaven.be)'
+        page.should have_content "Fase Ingediend"
     end
 
 

@@ -3,27 +3,18 @@ require 'spec_helper'
 require_relative 'shared_examples'
 
 describe "Nieuwbouw aanmelden" do
-  let(:verrichting_name){ "Testverrichting: #{Faker::Name.name}" }
-  let(:opmerkingen){ Faker::Lorem.sentence }
+  let(:verrichting_name){ "Testverrichting: #{Faker::Company.name}" }
+  let(:opmerkingen){ Faker::Company.bs }
   let(:project_identificatie){ '2007/1222' }
 
   before :each do
     log_in_as_shm
 
-    visit "v2/Projecten/#{project_identificatie}"
+    visit "V2/Projecten/#{project_identificatie}"
 
     # verrichting aanmaken
     find('.verrichting-add-tile').click
     click_on 'Nieuwbouw'
-
-    # select perceel
-    click_on "Zoek op adres"
-    select 'Antwerpen',  from: "Gemeente"
-    select 'Acacialaan', from: "Straat"
-    select '14',         from: "Huisnummer"
-    click_on 'Zoeken'
-    click_on 'Zoom'
-    click_on 'Selecteer perceel'
 
     # fill aanmelding
     fill_in 'Omschrijving', with: verrichting_name

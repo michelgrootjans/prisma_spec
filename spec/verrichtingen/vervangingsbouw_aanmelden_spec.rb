@@ -44,6 +44,8 @@ describe "Vervangingsbouw aanmelden" do
 
   it_behaves_like "een aangemelde verrichting"
 
+  it_behaves_like "een editeerbare verrichting"
+
 
   it "verwerkt de  wijzigingen" do
     click_on '#edit-verrichting'

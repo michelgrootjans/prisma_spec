@@ -12,10 +12,10 @@ describe "Project aanmaken" do
     click_on "Nieuw project"
 
     # project aanmaken
-    fill_in 'Omschrijving', with: "Testproject: #{project_name}"
+    fill_in 'Omschrijving', with: project_name
     select 'Antwerpen', from: "Gemeente"
     click_button 'Aanmaken'
 
-    page.should have_content @project_name
+    page.should have_content project_name
   end
 end

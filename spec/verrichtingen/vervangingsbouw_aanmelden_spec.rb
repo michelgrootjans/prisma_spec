@@ -48,7 +48,7 @@ describe "Vervangingsbouw aanmelden" do
 
 
   it "verwerkt de  wijzigingen" do
-    click_on '#edit-verrichting'
+    find('#edit-verrichting').click
 
     fill_in 'Omschrijving', with: "Nieuwe omschrijving"
     fill_in 'AantalHuurwoningen', with: "30"

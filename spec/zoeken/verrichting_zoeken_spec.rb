@@ -1,11 +1,12 @@
 require 'spec_helper.rb'
 
 describe "Zoeken naar 'arkenvest'" do
+  let(:home_page){ HomePage.new }
+
   before :each do
     log_in_as_shm
-    visit "/v2"
-    fill_in 'query', with: "arkenvest"
-    find(".glyphicon-search").click
+    home_page.load
+    home_page.search_for 'arkenvest'
   end
 
   it "toont project arkenvest" do

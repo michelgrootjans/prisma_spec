@@ -17,5 +17,6 @@ describe "Project aanmaken" do
     click_button 'Aanmaken'
 
     page.should have_content project_name
+    find('.verrichting-add-tile').should_not be nil
   end
 end
